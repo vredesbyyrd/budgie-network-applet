@@ -45,6 +45,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         network_state_label.halign = Gtk.Align.START;
         network_state_label.expand = true;
         network_state_label.margin_start = 6;
+	network_state_label.get_style_context ().add_class ("dim-label"); 
 
         img_strength = new Gtk.Image ();
         img_strength.icon_size = Gtk.IconSize.LARGE_TOOLBAR;
@@ -181,7 +182,8 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
             case State.CONNECTED_WIFI_OK:
             case State.CONNECTED_WIFI_GOOD:
             case State.CONNECTED_WIFI_EXCELLENT:
-                network_state_label.label = _("Connected");
+                network_state_label.label = _("<i>Connected</i>");
+		network_state_label.use_markup = true;
                 break;
             default:
                 network_state_label.label = _("Disconnected");

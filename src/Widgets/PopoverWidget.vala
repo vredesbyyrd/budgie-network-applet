@@ -53,10 +53,12 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
 
         hidden_item = new Gtk.ModelButton ();
         hidden_item.text = _("Connect to Hidden Network…");
+	hidden_item.get_style_context ().add_class ("dim-label");
         hidden_item.no_show_all = true;
 
         show_settings_button = new Gtk.ModelButton ();
         show_settings_button.text = _("Network Settings…");
+	show_settings_button.get_style_context ().add_class ("dim-label");
 
         add (hidden_item);
         add (show_settings_button);
